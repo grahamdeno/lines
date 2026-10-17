@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#070A1F">
+<meta name="description" content="Hammer'd Heads: the schedule, who's in, and the lines.">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Lines">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<!-- Link previews in WhatsApp and Messages: the team logo. -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Lines">
+<meta property="og:title" content="Hammer'd Heads">
+<meta property="og:description" content="Are you in? Tap to answer, and see the lines.">
+<meta property="og:image" content="https://grahamdeno.github.io/lines/icons/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Hammer'd Heads logo">
+<meta name="twitter:card" content="summary_large_image">
+<title>Lines · Hammer'd Heads</title>
+<!-- Only this app's own files run. Network: the relay (a Cloudflare Worker, see worker/),
+     or localhost while developing. A relay on your own domain needs adding here. -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self' https://*.workers.dev http://localhost:* http://127.0.0.1:*; manifest-src 'self'; worker-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<!-- VERSION (core.js) and CACHE (sw.js) are bumped together; see README, Releases. -->
+<link rel="modulepreload" href="core.js">
+<link rel="modulepreload" href="ui.js">
+<link rel="modulepreload" href="app.js">
+<link rel="preload" href="fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/instrument-serif-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app" id="app"></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<noscript>Lines needs JavaScript.</noscript>
+<script type="module" src="app.js"></script>
+</body>
+</html>

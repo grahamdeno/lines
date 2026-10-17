@@ -1,0 +1,8 @@
+.DS_Store
+node_modules/
+test-results/
+# Real team feeds hold a private key: never commit them.
+*.local.ics
+team-feed.ics
+.dev.vars
+.wrangler/

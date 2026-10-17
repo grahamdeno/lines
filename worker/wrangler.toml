@@ -1,0 +1,20 @@
+# Template for the Lines relay. Nothing is deployed from this repo automatically.
+# See worker/README.md. Fill in database_id after `wrangler d1 create lines`.
+name = "lines-relay"
+main = "lines-relay.js"
+compatibility_date = "2026-10-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "lines"
+database_id = "REPLACE_WITH_YOUR_D1_DATABASE_ID"
+
+[triggers]
+crons = ["17 7 * * *"]   # daily: remove polls 60 days after their game
+
+[vars]
+# Calendar hosts the relay will fetch from (comma separated).
+FEED_HOSTS = "sports-it.com,daysmartrecreation.com,dashplatform.com"
+
+# The team feed is private (its k= is a key). Never put it here or in git:
+#   npx wrangler secret put FEED_URL
